@@ -49,6 +49,7 @@ public class Sql2oEntryDao implements EntryDao {
         String sql = "UPDATE entries SET name = :name, phoneNumber = :phoneNumber, mailingAddress = :mailingAddress, emailAddress = :emailAddress WHERE id = :id";
         try(Connection con = sql2o.open()){
             con.createQuery(sql)
+                    .addParameter("id", id)
                     .addParameter("name", name)
                     .addParameter("phoneNumber", phoneNumber)
                     .addParameter("mailingAddress", mailingAddress)

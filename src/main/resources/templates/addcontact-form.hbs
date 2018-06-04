@@ -1,0 +1,39 @@
+{{#partial "content"}}
+<h2>Contacts:</h2>
+{{#if entry}}
+    <form action="/entries/{{entry.id}}/update" method="post">
+        <label for="name">Enter Contact Name</label>
+        <input type="text" name="name" id="name" value="{{entry.name}}"><br>
+
+        <label for="phone">Enter Contact Phone Number</label>
+        <input type="text" name="phone" id="phone" value="{{entry.phoneNumber}}"><br>
+
+        <label for="mailing">EC</label>
+        <input type="text" name="mailing" id="mailing" value="{{entry.mailingAddress}}"><br>
+
+        <label for="email">Enter Contact Email Address</label>
+        <input type="text" name="email" id="email" value="{{entry.emailAddress}}"><br>
+
+{{else}}
+    <form action="/entries/add" method="post">
+        <label for="name">Enter Contact Name</label>
+        <input type="text" name="name" id="name"><br>
+
+        <label for="phone">Enter Contact Phone Number</label>
+        <input type="text" name="phone" id="phone"><br>
+
+        <label for="mailing">Enter Contact Mailing Address</label>
+        <input type="text" name="mailing" id="mailing"><br>
+
+        <label for="email">Enter Contact Email Address</label>
+        <input type="text" name="email" id="email"><br>
+
+
+
+{{/if}}
+    <button type="submit">Go</button>
+</form>
+
+{{/partial}}
+
+{{> layout.hbs}}

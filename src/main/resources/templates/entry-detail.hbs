@@ -1,0 +1,17 @@
+{{#partial "content"}}
+
+<p>Details:</p>
+
+<p>{{ entry.name }}</p>
+<h5>Phone:</h5>
+<p> {{ entry.phoneNumber }}</p>
+<h5>Address:</h5>
+<p>{{ entry.mailingAddress }}</p>
+<h5>Email:</h5>
+<p>{{ entry.emailAddress }}</p>
+<a href="/entries/{{entry.id}}/update">Edit this entry</a><br>
+<a href="/entries/{{entry.id}}/delete">DELETE this entry (no undo)</a>
+
+{{/partial}}
+
+{{> layout.hbs}}
